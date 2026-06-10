@@ -17,12 +17,14 @@ public class CustomerService {
     CustomerRepository customerRepository;
 
     public Customer save(Customer customer) throws Exception{
-        if(customerRepository.getAccountNumber(customer.getAccountNumber()) == null){
-            customer.setCtreationDate(new Date());
-            customer.setIsActive(true);
-            return customerRepository.save(customer);
+
+        if (customerRepository.existsByAccountNumber(customer.getAccountNumber()) != null) {
+            throw new RuntimeException("Duplicate account number");
         }
-        throw new Exception("Duplicate account number");
+        customer.setCtreationDate(new Date());
+        customer.setIsActive(true);
+        return customerRepository.save(customer);
+
     }
 
     public List<Customer> getAll(){
