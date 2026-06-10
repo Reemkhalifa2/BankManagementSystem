@@ -18,7 +18,6 @@ public class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     private Date ctreationDate;
     private Date updateDate;
     private Boolean isActive;
