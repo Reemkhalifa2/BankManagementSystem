@@ -30,19 +30,21 @@ public class CustomerService {
     }
 
     public Customer getById(Integer id) throws Exception{
-        if( id != null) return customerRepository.getById(id);
-        throw new Exception("Id Cannot Be Null");
+        Customer customer = customerRepository.getById(id);
+        if( customer != null ) return customer;
+        throw new Exception("Customer not Found!");
     }
 
     public Customer getByName(String name) throws Exception{
-        if( name != null ) return customerRepository.getByName(name);
-        throw new Exception("Name Cannot Be Null");
+        Customer customer = customerRepository.getByName(name);
+        if( customer != null ) return customer;
+        throw new Exception("Customer not Found!");
     }
 
     public Customer update(Integer id,Customer customer) throws Exception{
         Customer customerToUpdate = customerRepository.getById(id);
         if(customerToUpdate == null){
-            throw new Exception("Customer does not Exist");
+            throw new Exception("Customer not Found!");
         }
         customerToUpdate.setCustomerName(customer.getCustomerName());
         customerToUpdate.setAccountNumber(customer.getAccountNumber());
