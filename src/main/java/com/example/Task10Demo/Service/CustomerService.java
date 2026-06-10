@@ -16,10 +16,13 @@ public class CustomerService {
     @Autowired
     CustomerRepository customerRepository;
 
-    public Customer save(Customer customer){
-        customer.setCtreationDate(new Date());
-        customer.setIsActive(true);
-        return customerRepository.save(customer);
+    public Customer save(Customer customer) throws Exception{
+        if(customerRepository.getAccountNumber(customer.getAccountNumber()) == null){
+            customer.setCtreationDate(new Date());
+            customer.setIsActive(true);
+            return customerRepository.save(customer);
+        }
+        throw new Exception("Duplicate account number");
     }
 
     public List<Customer> getAll(){
