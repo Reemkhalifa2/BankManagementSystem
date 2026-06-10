@@ -1,7 +1,9 @@
-🏦 Bank Management System
-📌 Project Description
+👇
 
-A simple REST API project built using Spring Boot, JPA, and MySQL to manage bank customers.
+🏦 Bank Management System
+📌 Description
+
+A simple Spring Boot REST API project to manage bank customers using MySQL and JPA.
 
 ⚙️ Technologies
 Java
@@ -9,43 +11,25 @@ Spring Boot
 Spring Data JPA
 MySQL
 Postman
+
 👤 Customer Fields
 Customer ID
-Name
+Customer Name
 Account Number
 Balance
 Email
 Phone Number
+
 🚀 API Endpoints
 ➕ Add Customer
-
-POST /api/customers
-
+POST /customer/add
 📋 Get All Customers
-
-GET /api/customers
-
+GET /customer/getAll
 🔍 Get Customer by ID
-
-GET /api/customers/{id}
-
+GET /customer/getById?id={id}
 🔎 Get Customer by Name
-
-GET /api/customers/name/{name}
-
+GET /customer/getByName?name={name}
 ✏️ Update Customer
-
-PUT /api/customers/{id}
-
+PUT /customer/update/{id}
 ❌ Delete Customer
-
-DELETE /api/customers/{id}
-
-✅ Validation Rules
-Name cannot be empty
-Email must be valid
-Balance cannot be negative
-Account number must be unique
-⚠️ Exceptions
-Customer not found
-Duplicate account number
+DELETE /customer/delete/{id}
