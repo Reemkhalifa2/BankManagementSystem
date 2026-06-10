@@ -1,59 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Bank Management System</title>
-</head>
-<body>
+🏦 Bank Management System
+📌 Project Description
 
-    <h1>🏦 Bank Management System</h1>
+A simple REST API project built using Spring Boot, JPA, and MySQL to manage bank customers.
 
-    <h2>📌 Description</h2>
-    <p>A simple Spring Boot REST API project to manage bank customers using MySQL and JPA.</p>
+⚙️ Technologies
+Java
+Spring Boot
+Spring Data JPA
+MySQL
+Postman
+👤 Customer Fields
+Customer ID
+Name
+Account Number
+Balance
+Email
+Phone Number
+🚀 API Endpoints
+➕ Add Customer
 
-    <h2>⚙️ Technologies</h2>
-    <ul>
-        <li>Java</li>
-        <li>Spring Boot</li>
-        <li>Spring Data JPA</li>
-        <li>MySQL</li>
-        <li>Postman</li>
-    </ul>
+POST /api/customers
 
-    <h2>👤 Customer Fields</h2>
-    <ul>
-        <li>Customer ID</li>
-        <li>Customer Name</li>
-        <li>Account Number</li>
-        <li>Balance</li>
-        <li>Email</li>
-        <li>Phone Number</li>
-    </ul>
+📋 Get All Customers
 
-    <h2>🚀 API Endpoints</h2>
+GET /api/customers
 
-    <h3>➕ Add Customer</h3>
-    <p>POST /customer/add</p>
+🔍 Get Customer by ID
 
-    <h3>📋 Get All Customers</h3>
-    <p>GET /customer/getAll</p>
+GET /api/customers/{id}
 
-    <h3>🔍 Get Customer by ID</h3>
-    <p>GET /customer/getById?id={id}</p>
+🔎 Get Customer by Name
 
-    <h3>🔎 Get Customer by Name</h3>
-    <p>GET /customer/getByName?name={name}</p>
+GET /api/customers/name/{name}
 
-    <h3>✏️ Update Customer</h3>
-    <p>PUT /customer/update/{id}</p>
+✏️ Update Customer
 
-    <h3>❌ Delete Customer</h3>
-    <p>DELETE /customer/delete/{id}</p>
+PUT /api/customers/{id}
 
-    <h2>🧪 Testing</h2>
-    <p>Use Postman to test all APIs. Send JSON body for POST and PUT requests.</p>
+❌ Delete Customer
 
-    <h2>🗄️ Database</h2>
-    <p>MySQL is used and tables are created automatically using JPA.</p>
+DELETE /api/customers/{id}
 
-</body>
-</html>
+✅ Validation Rules
+Name cannot be empty
+Email must be valid
+Balance cannot be negative
+Account number must be unique
+⚠️ Exceptions
+Customer not found
+Duplicate account number
+Invalid data
