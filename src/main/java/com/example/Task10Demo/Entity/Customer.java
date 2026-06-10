@@ -22,7 +22,6 @@ public class Customer extends BaseEntity {
     @PositiveOrZero(message = "Balance Cannot Be Negative!")
     private Double balance;
     @Email(message = "Email must be valid!")
-    @NotBlank(message = "Email Cannot Be Empty!")
     private String email;
     private String phoneNumber;
 
