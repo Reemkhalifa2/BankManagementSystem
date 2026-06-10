@@ -6,6 +6,7 @@ import com.example.Task10Demo.Validation.CustomerValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -16,7 +17,8 @@ public class CustomerController {
     CustomerService customerService;
 
     @PostMapping("add")
-    public Customer add(@RequestBody Customer customer){
+    public Customer add(@RequestBody Customer customer) throws Exception{
+        customer.setCtreationDate(new Date());
         return customerService.save(customer);
     }
 
