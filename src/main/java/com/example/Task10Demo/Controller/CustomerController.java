@@ -33,7 +33,7 @@ public class CustomerController {
     }
 
     @GetMapping("getByName")
-    public Customer getByName(@RequestParam String name) throws Exception{
+    public List<Customer> getByName(@RequestParam String name) throws Exception{
         return customerService.getByName(name);
     }
 

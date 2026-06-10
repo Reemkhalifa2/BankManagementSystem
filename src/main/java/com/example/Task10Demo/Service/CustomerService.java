@@ -37,8 +37,8 @@ public class CustomerService {
         throw new Exception("Customer not Found!");
     }
 
-    public Customer getByName(String name) throws Exception{
-        Customer customer = customerRepository.getByName(name);
+    public List<Customer> getByName(String name) throws Exception{
+        List<Customer> customer = customerRepository.getByName(name);
         if( customer != null ) return customer;
         throw new Exception("Customer not Found!");
     }
